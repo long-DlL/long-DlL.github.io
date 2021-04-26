@@ -6,16 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>如何提升编程能力 | Hexo</title>
+  <title>4-26刷题日记-二分搜索 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="article">
-<meta property="og:title" content="如何提升编程能力">
-<meta property="og:url" content="http://example.com/2021/04/06/%E5%A6%82%E4%BD%95%E6%8F%90%E5%8D%87%E7%BC%96%E7%A8%8B%E8%83%BD%E5%8A%9B/index.html">
+<meta property="og:title" content="4-26刷题日记-二分搜索">
+<meta property="og:url" content="http://example.com/2021/04/26/4-26%E5%88%B7%E9%A2%98%E6%97%A5%E8%AE%B0-%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-04-06T15:16:12.000Z">
-<meta property="article:modified_time" content="2021-04-06T15:16:12.545Z">
+<meta property="article:published_time" content="2021-04-26T14:27:17.000Z">
+<meta property="article:modified_time" content="2021-04-26T14:35:16.412Z">
 <meta property="article:author" content="Long DlL">
+<meta property="article:tag" content="刷题日记">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -157,27 +158,39 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-如何提升编程能力" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-4-26刷题日记-二分搜索" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      如何提升编程能力
+      4-26刷题日记-二分搜索
     </h1>
   
 
         
-        <a href="/2021/04/06/%E5%A6%82%E4%BD%95%E6%8F%90%E5%8D%87%E7%BC%96%E7%A8%8B%E8%83%BD%E5%8A%9B/" class="archive-article-date">
-  	<time datetime="2021-04-06T15:16:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-06</time>
+        <a href="/2021/04/26/4-26%E5%88%B7%E9%A2%98%E6%97%A5%E8%AE%B0-%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2/" class="archive-article-date">
+  	<time datetime="2021-04-26T14:27:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p><escape><span id="more"></span></escape></p>
+<hr>
+<h2 id="刷题日记-2021-04-24"><a href="#刷题日记-2021-04-24" class="headerlink" title="刷题日记 2021 - 04 - 24"></a>刷题日记 2021 - 04 - 24</h2><p>刷题日记这个框架下其实不是写题解，主要是记录一下自己做过的题目，并且把自己写这个题目时候遇到的坑记录一下，用于自检。</p>
+<p>今天写了两道几乎差不多的题，讲的就是二分搜索，就是二分法搜出答案，具体的看题目吧</p>
+<h2 id="leetcode-1011-在-D-天内送达包裹的能力"><a href="#leetcode-1011-在-D-天内送达包裹的能力" class="headerlink" title="leetcode 1011.在 D 天内送达包裹的能力"></a>leetcode 1011.在 D 天内送达包裹的能力</h2><p>注释写的非常详细//区间具有分段性，考虑到划分区间，因此有两种初步思路<br>    //最先想到的肯定是二分/分治，其实你的思路都是去找到D<br>    //D首先肯定要大于你任意一天的量，不然动不了，左端点就有了。<br>    //D肯定也要小于总重量所以，右端点也就有了<br>    //接下来自然而言的发现左右区间端点都有了，直接二分搜索就出来了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    &#x2F;&#x2F;区间具有分段性，考虑到划分区间，因此有两种初步思路</span><br><span class="line">    &#x2F;&#x2F;最先想到的肯定是二分&#x2F;分治，其实你的思路都是去找到D</span><br><span class="line">    &#x2F;&#x2F;D首先肯定要大于你任意一天的量，不然动不了，左端点就有了。</span><br><span class="line">    &#x2F;&#x2F;D肯定也要小于总重量所以，右端点也就有了</span><br><span class="line">    &#x2F;&#x2F;接下来自然而言的发现左右区间端点都有了，直接二分搜索就出来了</span><br><span class="line">    int shipWithinDays(vector&lt;int&gt;&amp; weights, int D) &#123;</span><br><span class="line">        int n &#x3D; weights.size();</span><br><span class="line">        int left &#x3D; *max_element(weights.begin(),weights.end());&#x2F;&#x2F;左端点</span><br><span class="line">        int right &#x3D; accumulate(weights.begin(),weights.end(),0);&#x2F;&#x2F;右端点</span><br><span class="line">        while(left &lt; right)&#123;&#x2F;&#x2F;二分过程</span><br><span class="line">            int mid &#x3D; (left + right) &#x2F; 2;&#x2F;&#x2F;取中心为基准</span><br><span class="line">            int cur &#x3D; 0, need &#x3D; 1;</span><br><span class="line">            &#x2F;&#x2F;cur代表一天运的总量，need代表费的天数</span><br><span class="line">            for(int weight : weights)&#123;</span><br><span class="line">                if(cur + weight &gt; mid)&#123;&#x2F;&#x2F;当今天已经不能再运</span><br><span class="line">                    need++;&#x2F;&#x2F;就再来一天</span><br><span class="line">                    cur &#x3D; 0;&#x2F;&#x2F;清零</span><br><span class="line">                &#125;</span><br><span class="line">                cur +&#x3D; weight;&#x2F;&#x2F;不断累加</span><br><span class="line">            &#125;</span><br><span class="line">            if(need &lt;&#x3D; D)&#123;&#x2F;&#x2F;如果发现比预期快了，那么就要减小总量</span><br><span class="line">                right &#x3D; mid;</span><br><span class="line">            &#125;else &#123;&#x2F;&#x2F;与上述相反</span><br><span class="line">                left &#x3D; mid + 1;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return left;&#x2F;&#x2F;返回端点值（此时left&#x3D;right）；</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="leetcode-875-爱吃香蕉的珂珂"><a href="#leetcode-875-爱吃香蕉的珂珂" class="headerlink" title="leetcode 875.爱吃香蕉的珂珂"></a>leetcode 875.爱吃香蕉的珂珂</h2><pre><code>//对于左右端点的选取，这个题有些不同
+//左端点取1，右端点10^9，全范围遍历，可以
+//如果左取和的平均值（小于则必不能吃完），右取（最大堆）可以
+//实际表现时，由于第二种取法需要遍历数组，实际可能差不多，都可以
+</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    &#x2F;&#x2F;二分查找</span><br><span class="line">    &#x2F;&#x2F;对于左右端点的选取，这个题有些不同</span><br><span class="line">    &#x2F;&#x2F;左端点取1，右端点10^9，全范围遍历，可以</span><br><span class="line">    &#x2F;&#x2F;如果左取和的平均值（小于则必不能吃完），右取（最大堆）可以</span><br><span class="line">    &#x2F;&#x2F;实际表现时，由于第二种取法需要遍历数组，实际可能差不多，都可以</span><br><span class="line">    int minEatingSpeed(vector&lt;int&gt;&amp; piles, int H) &#123;</span><br><span class="line">        long sum &#x3D; 0;</span><br><span class="line">        int maxn &#x3D; 0;</span><br><span class="line">        for(int pile: piles)&#123;</span><br><span class="line">            sum +&#x3D; pile;</span><br><span class="line">            maxn &#x3D; max(maxn,pile);</span><br><span class="line">        &#125;</span><br><span class="line">        int lo &#x3D; sum % H &#x3D;&#x3D; 0 ? sum &#x2F; H : sum &#x2F; H + 1, hi &#x3D; maxn;</span><br><span class="line">        while (lo &lt; hi) &#123;</span><br><span class="line">            int mi &#x3D; lo + (hi - lo) &#x2F; 2;</span><br><span class="line">            if (!possible(piles, H, mi))</span><br><span class="line">                lo &#x3D; mi + 1;</span><br><span class="line">            else</span><br><span class="line">                hi &#x3D; mi;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        return lo;</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F;这个题第二个难点就是二分查找中间的判断过程</span><br><span class="line">    &#x2F;&#x2F;代码如下，也比较好理解</span><br><span class="line">    bool possible(vector&lt;int&gt;&amp; piles, int H, int K) &#123;</span><br><span class="line">        int time &#x3D; 0;</span><br><span class="line">        for (int p: piles)</span><br><span class="line">            time +&#x3D; (p - 1) &#x2F; K + 1;</span><br><span class="line">        return time &lt;&#x3D; H;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
       
 
       
@@ -185,6 +198,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">刷题日记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -235,7 +259,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/04/06/%E5%A6%82%E4%BD%95%E6%8F%90%E5%8D%87%E7%BC%96%E7%A8%8B%E8%83%BD%E5%8A%9B/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/04/26/4-26%E5%88%B7%E9%A2%98%E6%97%A5%E8%AE%B0-%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -249,18 +273,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/04/12/%E8%93%9D%E6%A1%A5%E6%9D%AF2020%E5%B9%B4%E7%AC%AC%E4%B8%80%E5%9C%BA%E7%9C%81%E8%B5%9BA%E7%BB%84C/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          蓝桥杯2020年第一场省赛A组C++
-        
-      </div>
-    </a>
   
-  
-    <a href="/2021/03/31/%E9%A2%86%E6%89%A3cat%E6%8E%92%E4%BD%8D%E8%B5%9B%E5%AE%9E%E5%BD%95/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">领扣cat排位赛实录</div>
+    <a href="/2021/04/25/C-STL%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">C++ STL总结（一）</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -287,7 +302,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%B7%E9%A2%98%E6%97%A5%E8%AE%B0-2021-04-24"><span class="toc-number">1.</span> <span class="toc-text">刷题日记 2021 - 04 - 24</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#leetcode-1011-%E5%9C%A8-D-%E5%A4%A9%E5%86%85%E9%80%81%E8%BE%BE%E5%8C%85%E8%A3%B9%E7%9A%84%E8%83%BD%E5%8A%9B"><span class="toc-number">2.</span> <span class="toc-text">leetcode 1011.在 D 天内送达包裹的能力</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#leetcode-875-%E7%88%B1%E5%90%83%E9%A6%99%E8%95%89%E7%9A%84%E7%8F%82%E7%8F%82"><span class="toc-number">3.</span> <span class="toc-text">leetcode 875.爱吃香蕉的珂珂</span></a></li></ol>
                     </div>
                 </span>
             </div>
