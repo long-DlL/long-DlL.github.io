@@ -6,12 +6,12 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>4-30刷题日记 | Hexo</title>
+  <title>4-30刷题日记 | longDlL的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="article">
 <meta property="og:title" content="4-30刷题日记">
 <meta property="og:url" content="http://example.com/2021/04/30/4-30%E5%88%B7%E9%A2%98%E6%97%A5%E8%AE%B0/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="longDlL的博客">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-04-30T15:38:01.000Z">
 <meta property="article:modified_time" content="2021-04-30T16:01:54.573Z">
@@ -19,7 +19,7 @@
 <meta property="article:tag" content="刷题日记">
 <meta name="twitter:card" content="summary">
   
-    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="longDlL的博客" type="application/atom+xml">
   
   
     <link rel="icon" href="/assets/head.png">
@@ -65,7 +65,7 @@
 			</ul>
 		</nav>
 		<nav>
-			总文章数 26
+			总文章数 27
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -187,7 +187,7 @@
 <p>难度在于实现的过程，map转vector&lt; pair &gt;，再对pair排序。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int findLeastNumOfUniqueInts(vector&lt;int&gt;&amp; arr, int k) &#123;</span><br><span class="line">        unordered_map&lt;int, int&gt; hash;</span><br><span class="line">        for(int a : arr)&#123;</span><br><span class="line">            hash[a]++;</span><br><span class="line">        &#125;</span><br><span class="line">        vector&lt;pair&lt;int, int&gt;&gt; freq(hash.begin(), hash.end());</span><br><span class="line">        sort(freq.begin(),freq.end(),[](const auto&amp; u, const auto&amp; v)&#123;return u.second &lt; v.second;&#125;);</span><br><span class="line">        int ans &#x3D; freq.size();</span><br><span class="line">        for(auto [_,t] : freq)&#123;</span><br><span class="line">            if(k &gt;&#x3D; t)&#123;</span><br><span class="line">                k -&#x3D; t;</span><br><span class="line">                ans--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h2 id="leetcode-1647-字符频次唯一的最小删除次数"><a href="#leetcode-1647-字符频次唯一的最小删除次数" class="headerlink" title="leetcode 1647. 字符频次唯一的最小删除次数"></a>leetcode 1647. 字符频次唯一的最小删除次数</h2><p>和上个题不同的是，不需要开map了，因为字母直接开到26就行了。依然是统计排序加贪心</p>
-<p>~~~<br>class Solution<br>{<br>public:<br>    int minDeletions(string s)<br>    {   ///////// 统计，排序，贪心<br>        int n = s.size();<br>        vector<int> freq(26, 0);<br>        for (char c: s)<br>            freq[c - ‘a’] ++;</p>
+<p>~~~<br>class Solution<br>{<br>public:<br>    int minDeletions(string s)<br>    {   ///////// 统计，排序，贪心<br>        int n = s.size();<br>        vector<int> freq(26, 0);<br>        for (char c: s)<br>            freq[c - ‘a’] ++;</int></p>
 <pre><code>    sort(freq.rbegin(), freq.rend());
 
     int res = 0;
@@ -285,6 +285,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2021/05/06/arduino%E5%AE%9E%E7%8E%B0%E7%83%9F%E9%9B%BE%E6%8A%A5%E8%AD%A6%E5%99%A8/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          arduino实现烟雾报警器
+        
+      </div>
+    </a>
   
   
     <a href="/2021/04/30/4-29%E5%88%B7%E9%A2%98%E6%97%A5%E8%AE%B0/" id="article-nav-older" class="article-nav-link-wrap">
@@ -441,11 +450,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">算法学习</a>
+                <a href="javascript:void(0)" class="js-tag color5">刷题日记</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">刷题日记</a>
+                <a href="javascript:void(0)" class="js-tag color5">算法学习</a>
               </li>
              
               <li class="article-tag-list-item">
