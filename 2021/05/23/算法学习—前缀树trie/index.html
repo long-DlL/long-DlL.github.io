@@ -6,19 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>我眼中的程序员 | longDlL的博客</title>
+  <title>算法学习—前缀树trie | longDlL的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to my blog, enter password to read.">
-<meta property="og:type" content="article">
-<meta property="og:title" content="我眼中的程序员">
-<meta property="og:url" content="http://example.com/2021/03/31/%E6%88%91%E7%9C%BC%E4%B8%AD%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98/index.html">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="算法学习—前缀树trie">
+<meta property="og:url" content="http://example.com/2021/05/23/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E2%80%94%E5%89%8D%E7%BC%80%E6%A0%91trie/index.html">
 <meta property="og:site_name" content="longDlL的博客">
-<meta property="og:description" content="Welcome to my blog, enter password to read.">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-03-31T14:35:22.000Z">
-<meta property="article:modified_time" content="2021-04-07T13:42:25.728Z">
+<meta property="article:published_time" content="2021-05-23T14:52:06.000Z">
+<meta property="article:modified_time" content="2021-05-23T15:09:28.181Z">
 <meta property="article:author" content="Long DlL">
-<meta property="article:tag" content="日常">
+<meta property="article:tag" content="算法学习">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="longDlL的博客" type="application/atom+xml">
@@ -160,38 +158,46 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-我眼中的程序员" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-算法学习—前缀树trie" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      我眼中的程序员
+      算法学习—前缀树trie
     </h1>
   
 
         
-        <a href="/2021/03/31/%E6%88%91%E7%9C%BC%E4%B8%AD%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98/" class="archive-article-date">
-  	<time datetime="2021-03-31T14:35:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-31</time>
+        <a href="/2021/05/23/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E2%80%94%E5%89%8D%E7%BC%80%E6%A0%91trie/" class="archive-article-date">
+  	<time datetime="2021-05-23T14:52:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-23</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
-  <script id="hbeData" type="hbeData" data-hmacdigest="18ca404842d1135b4b52ba64ccb3409bd0a1c307df3403f6025f9441426021d5">757d6246220447313784a310f701cd40f62e08ca7a3d4d0c91c544502dc4dfcdbd43d96e2899d9cd16079f1365317d9d4954b55a53f39e20046aafad58f089784ea8cf1f5d2a2db15ba2566eb7f8942409c77a6f8256bba54f9b35c0d33458f37d2ac2381cc49e0d63adff6008227fcc85314216f31f160a9467bcfab2d307f377bb3d1567a6953141e2b913e7028bffc865fbe7f02e16ff6c23f6f9105def173f1949d75a1d8aa34187d86a14543e5b09a1c8b444f55db2fde4719a48173e20bd3adba78d7be10300adc5ded06d66d43992f3b7f84d6f9a05d5768f33ffe42d5b7f4aa3c9ac57cbe208c4eaf45c301c26839cff36c5555d521bda37f992575219ed09830a5cec82d3cbbb146a6dec3227c017a78d5624bd0c09b4d6faf18944d292c14b8fb3fe477158a6de566ac76ca252934b676b1564f586698e0b8a3031094dbc028ed324d4685545b24360386fa4aebdd3a2d1baf026bfd43dad231dc71aa78e47e6c7a55cb78fc8795ab05e9e4a9b2ba1962c750c7bc776dadc5685b3e667a2615712827c5b3595161c68fc0eecfe73d566cee142b358b6aaefac6bdd2b2c0764b197c35ce80460c6cbd452acc48557bc90449591772787da964a1db6b9057d407d40e5816ee05ff3fa5627e63c2f3b132712782e55efae8a32f15d876a44c2074bbec29ddc62221b3a1ad886a94b6abe8ff56b7dfce61c8ec99c83ae887ecae67e34cac60f890946a0e7e24c1fd8ca15aa2c7f0ee61deb19d64baf149fd0dd45082e4798c2ad5fec7c6ae0e9df47578f9c8827897068a0d6367dd9fcbe6eb0684e87edac1ca621a7dddeedfe3c21b865e27145a25150f9308f4e3e3b6d3312443b7a7525166ed05824b321200004fa71cc933de30e0baa51b0c9e7eb643915c175a6f5b1be25916380ef3a606f71a9d77747fdfc6672197e666cfc2caaf6b0145ea45023bfcfb29daac672db21f4384e981dbc86941462326a722078c891d3c51ecede80cebcb30b0b9c7110fe3a56b0654fd21dee228e1d63eaad57198bfcf5d0978a188883aed0d2b11f89b9a902329b5dd2a1b76740bd4a5962d2965db0a0837c0ece4affbc16b3fd2d769aec56abcf248bcbfd02d00475c4d4c1f5f54e59a300fcb8f4c16008016e2dbefd8e149f459f8904bdd83fbf73f0a4b196fbe52c648500144009cf503c4dfea0b931ad746fc81202dc26cc0ba0301453fc59e9db0b32df83d43a80e6446d2880112d768455bc068b8c8b9a59505a796692e43017c2ad70503e795e536a339141731494237b84ea9ad60b4e1ee6bce8817040f8f3b3e778ac6859788cc23e419789757376e8b5eb8f00aa326b1796cd05c3a4f98e2849adc8a36182a5e6c2153780a344697592ef74ea3e3f117ed9328ab7172ebc21ac0d6e90e0e2d74d04a582fe44a5316f5fdb3fb9fce0ed9ed19369</script>
-  <div class="hbe hbe-content">
-    <div class="hbe hbe-input hbe-input-default">
-      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
-      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
-        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Welcome to my blog, enter password to read.</span>
-      </label>
-    </div>
-  </div>
-</div>
-<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
+        <p><escape><span id="more"></span></escape></p>
+<hr>
+<h2 id="今天学习前缀树-trie"><a href="#今天学习前缀树-trie" class="headerlink" title="今天学习前缀树 trie"></a>今天学习前缀树 trie</h2><p>trie与try同音<br>本文将利用C++实现一个trie类相当于模板调用</p>
+<h2 id="为了以后能用到所以先讲讲用处"><a href="#为了以后能用到所以先讲讲用处" class="headerlink" title="为了以后能用到所以先讲讲用处"></a>为了以后能用到所以先讲讲用处</h2><p>trie是前缀树，前缀树及比如crowd按字母差开，然后以树形保存，同时在最后一个字母d处添加完结标记，意味着这是一个完整单词。前缀树的操作其实很好实现。</p>
+<p>要想学会 Trie 就得先明白它的结点设计。我们可以看到TrieNode结点中并没有直接保存字符值的数据成员，那它是怎么保存字符的呢？<br>结点设计：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">struct TrieNode &#123;</span><br><span class="line">    bool isEnd; &#x2F;&#x2F;该结点是否是一个串的结束</span><br><span class="line">    TrieNode* next[26]; &#x2F;&#x2F;字母映射表</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>这时字母映射表next 的妙用就体现了，TrieNode* next[26]中保存了对当前结点而言下一个可能出现的所有字符的链接，因此我们可以通过一个父结点来预知它所有子结点的值。</p>
+<p>当然其实前缀树的应用也不止于此，不仅仅是字母，其他类似的这种相同前缀处理也是可以使用前缀树的，只不过需要更改next的类型与映射规则。</p>
+<p><a target="_blank" rel="noopener" href="https://pic.leetcode-cn.com/3a0be6938b0a5945695fcddd29c74aacc7ac30f040f5078feefab65339176058-file_1575215106942">前缀树举例</a></p>
+<p>实现第一个操作创建一个单词的trie，依次遍历寻找有没有字母，没有就创建分支。</p>
+<p>第二个操作就是查询一个前缀是否出现过，与上述操作非常类似。</p>
+<p>第三个操作就是搜索单词，注意结尾标记的使用即可。</p>
+<h2 id="给出操作代码："><a href="#给出操作代码：" class="headerlink" title="给出操作代码："></a>给出操作代码：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">class Trie &#123;</span><br><span class="line">private:</span><br><span class="line">    bool isEnd;</span><br><span class="line">    Trie* next[26];</span><br><span class="line">public:</span><br><span class="line">    Trie() &#123;&#x2F;&#x2F;初始化</span><br><span class="line">        isEnd &#x3D; false;</span><br><span class="line">        memset(next, 0, sizeof(next));</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    void insert(string word) &#123;&#x2F;&#x2F;插入一个新的单词</span><br><span class="line">        Trie* node &#x3D; this;</span><br><span class="line">        for (char c : word) &#123;</span><br><span class="line">            if (node-&gt;next[c-&#39;a&#39;] &#x3D;&#x3D; NULL) &#123;</span><br><span class="line">                node-&gt;next[c-&#39;a&#39;] &#x3D; new Trie();</span><br><span class="line">            &#125;</span><br><span class="line">            node &#x3D; node-&gt;next[c-&#39;a&#39;];</span><br><span class="line">        &#125;</span><br><span class="line">        node-&gt;isEnd &#x3D; true;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    bool search(string word) &#123;&#x2F;&#x2F;搜索是否存在单词</span><br><span class="line">        Trie* node &#x3D; this;</span><br><span class="line">        for (char c : word) &#123;</span><br><span class="line">            node &#x3D; node-&gt;next[c - &#39;a&#39;];</span><br><span class="line">            if (node &#x3D;&#x3D; NULL) &#123;</span><br><span class="line">                return false;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return node-&gt;isEnd;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    bool startsWith(string prefix) &#123;&#x2F;&#x2F;查找前缀</span><br><span class="line">        Trie* node &#x3D; this;</span><br><span class="line">        for (char c : prefix) &#123;</span><br><span class="line">            node &#x3D; node-&gt;next[c-&#39;a&#39;];</span><br><span class="line">            if (node &#x3D;&#x3D; NULL) &#123;</span><br><span class="line">                return false;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="接下来我们就举一个特殊例子来细化一下，推广"><a href="#接下来我们就举一个特殊例子来细化一下，推广" class="headerlink" title="接下来我们就举一个特殊例子来细化一下，推广"></a>接下来我们就举一个特殊例子来细化一下，推广</h2><p>leetcode 1707. 与数组中元素的最大异或值<br>hard 级别的题目</p>
+<p>给你一个由非负整数组成的数组 nums 。另有一个查询数组 queries ，其中 queries[i] = [xi, mi] 。</p>
+<p>第 i 个查询的答案是 xi 和任何 nums 数组中不超过 mi 的元素按位异或（XOR）得到的最大值。换句话说，答案是 max(nums[j] XOR xi) ，其中所有 j 均满足 nums[j] &lt;= mi 。如果 nums 中的所有元素都大于 mi，最终答案就是 -1 。</p>
+<p>返回一个整数数组 answer 作为查询的答案，其中 answer.length == queries.length 且 answer[i] 是第 i 个查询的答案。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">题目讲了范围在10的5次方大小，所以理论上O(n^2)及以上的暴力算法就不用考虑了，但是这个题目的测试数据很少，暴力竟然能过。。。</span><br><span class="line"></span><br><span class="line">不过这里还是按照前缀树模板来做，为了最大化异或值，我们可以在字典树中进行一次与检索字符串类似的过程，从根节点出发，由于异或运算具有「相同得 0，不同得 1」的性质，为了尽可能多地取到 1，我们需要在每一步寻找与当前位相反的子节点，若该节点存在则将指针移动到该节点，否则只能移动到与当前位相同的子节点。（注意由于插入和查询的二进制串长度均为 LL，非叶节点的两个子节点中，至少有一个是非空节点）</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class Trie &#123;</span><br><span class="line">public:</span><br><span class="line">    const int L &#x3D; 30;</span><br><span class="line"></span><br><span class="line">    Trie* children[2] &#x3D; &#123;&#125;;</span><br><span class="line">    int min &#x3D; INT_MAX;</span><br><span class="line"></span><br><span class="line">    void insert(int val) &#123;</span><br><span class="line">        Trie* node &#x3D; this;</span><br><span class="line">        node-&gt;min &#x3D; std::min(node-&gt;min, val);</span><br><span class="line">        for (int i &#x3D; L - 1; i &gt;&#x3D; 0; --i) &#123;</span><br><span class="line">            int bit &#x3D; (val &gt;&gt; i) &amp; 1;</span><br><span class="line">            if (node-&gt;children[bit] &#x3D;&#x3D; nullptr) &#123;</span><br><span class="line">                node-&gt;children[bit] &#x3D; new Trie();</span><br><span class="line">            &#125;</span><br><span class="line">            node &#x3D; node-&gt;children[bit];</span><br><span class="line">            node-&gt;min &#x3D; std::min(node-&gt;min, val);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    int getMaxXorWithLimit(int val, int limit) &#123;</span><br><span class="line">        Trie* node &#x3D; this;</span><br><span class="line">        if (node-&gt;min &gt; limit) &#123;</span><br><span class="line">            return -1;</span><br><span class="line">        &#125;</span><br><span class="line">        int ans &#x3D; 0;</span><br><span class="line">        for (int i &#x3D; L - 1; i &gt;&#x3D; 0; --i) &#123;</span><br><span class="line">            int bit &#x3D; (val &gt;&gt; i) &amp; 1;</span><br><span class="line">            if (node-&gt;children[bit ^ 1] !&#x3D; nullptr &amp;&amp; node-&gt;children[bit ^ 1]-&gt;min &lt;&#x3D; limit) &#123;</span><br><span class="line">                ans |&#x3D; 1 &lt;&lt; i;</span><br><span class="line">                bit ^&#x3D; 1;</span><br><span class="line">            &#125;</span><br><span class="line">            node &#x3D; node-&gt;children[bit];</span><br><span class="line">        &#125;</span><br><span class="line">        return ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    vector&lt;int&gt; maximizeXor(vector&lt;int&gt; &amp;nums, vector&lt;vector&lt;int&gt;&gt; &amp;queries) &#123;</span><br><span class="line">        Trie* t &#x3D; new Trie();</span><br><span class="line">        for (int val : nums) &#123;</span><br><span class="line">            t-&gt;insert(val);</span><br><span class="line">        &#125;</span><br><span class="line">        int numQ &#x3D; queries.size();</span><br><span class="line">        vector&lt;int&gt; ans(numQ);</span><br><span class="line">        for (int i &#x3D; 0; i &lt; numQ; ++i) &#123;</span><br><span class="line">            ans[i] &#x3D; t-&gt;getMaxXorWithLimit(queries[i][0], queries[i][1]);</span><br><span class="line">        &#125;</span><br><span class="line">        return ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>这样的作法耗时依旧在889ms，所以可见这个题目的时间放的比较宽，所以暴力能过。。。</p>
+
       
 
       
@@ -204,7 +210,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">日常</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">算法学习</a>
         		</li>
       		
 		</ul>
@@ -260,7 +266,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/03/31/%E6%88%91%E7%9C%BC%E4%B8%AD%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/05/23/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E2%80%94%E5%89%8D%E7%BC%80%E6%A0%91trie/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -274,18 +280,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/03/31/%E5%88%B7%E9%A2%98%E4%B9%8B%E4%BA%8C%E5%88%86%E6%B3%95/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2021/05/23/%E7%AE%97%E6%B3%95%E5%88%B7%E9%A2%98%E2%80%94%E5%B9%BF%E4%B9%89%E6%A0%91/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          刷题之二分法
+          算法刷题—广义树
         
       </div>
     </a>
   
   
-    <a href="/2021/03/31/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">我的第一篇博客</div>
+    <a href="/2021/05/16/%E7%AE%97%E6%B3%95%E5%88%B7%E9%A2%98-%E6%93%8D%E4%BD%9C%E5%8C%BA%E9%97%B4/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">算法刷题-操作区间</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -312,7 +318,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8A%E5%A4%A9%E5%AD%A6%E4%B9%A0%E5%89%8D%E7%BC%80%E6%A0%91-trie"><span class="toc-number">1.</span> <span class="toc-text">今天学习前缀树 trie</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BA%E4%BA%86%E4%BB%A5%E5%90%8E%E8%83%BD%E7%94%A8%E5%88%B0%E6%89%80%E4%BB%A5%E5%85%88%E8%AE%B2%E8%AE%B2%E7%94%A8%E5%A4%84"><span class="toc-number">2.</span> <span class="toc-text">为了以后能用到所以先讲讲用处</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%99%E5%87%BA%E6%93%8D%E4%BD%9C%E4%BB%A3%E7%A0%81%EF%BC%9A"><span class="toc-number">3.</span> <span class="toc-text">给出操作代码：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A5%E4%B8%8B%E6%9D%A5%E6%88%91%E4%BB%AC%E5%B0%B1%E4%B8%BE%E4%B8%80%E4%B8%AA%E7%89%B9%E6%AE%8A%E4%BE%8B%E5%AD%90%E6%9D%A5%E7%BB%86%E5%8C%96%E4%B8%80%E4%B8%8B%EF%BC%8C%E6%8E%A8%E5%B9%BF"><span class="toc-number">4.</span> <span class="toc-text">接下来我们就举一个特殊例子来细化一下，推广</span></a></li></ol>
                     </div>
                 </span>
             </div>
