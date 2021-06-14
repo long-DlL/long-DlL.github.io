@@ -6,14 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2021/6 | longDlL的博客</title>
+  <title>机器学习—决策树模型 | longDlL的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="longDlL的博客">
-<meta property="og:url" content="http://example.com/archives/2021/06/index.html">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="机器学习—决策树模型">
+<meta property="og:url" content="http://example.com/2021/06/14/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E2%80%94%E5%86%B3%E7%AD%96%E6%A0%91%E6%A8%A1%E5%9E%8B/index.html">
 <meta property="og:site_name" content="longDlL的博客">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-06-14T08:59:28.000Z">
+<meta property="article:modified_time" content="2021-06-14T09:07:05.530Z">
 <meta property="article:author" content="Long DlL">
+<meta property="article:tag" content="机器学习">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="longDlL的博客" type="application/atom+xml">
@@ -155,36 +158,104 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-机器学习—决策树模型" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      机器学习—决策树模型
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/06/14/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E2%80%94%E5%86%B3%E7%AD%96%E6%A0%91%E6%A8%A1%E5%9E%8B/" class="archive-article-date">
+
+        
+        <a href="/2021/06/14/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E2%80%94%E5%86%B3%E7%AD%96%E6%A0%91%E6%A8%A1%E5%9E%8B/" class="archive-article-date">
   	<time datetime="2021-06-14T08:59:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-14</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/06/14/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E2%80%94%E5%86%B3%E7%AD%96%E6%A0%91%E6%A8%A1%E5%9E%8B/">机器学习—决策树模型</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><escape><span id="more"></span></escape></p>
+<hr>
+<h2 id="今天学习机器学习中的-决策树模型"><a href="#今天学习机器学习中的-决策树模型" class="headerlink" title="今天学习机器学习中的 决策树模型"></a>今天学习机器学习中的 决策树模型</h2><p>一类常见的机器学习方法<br>目的是为了产生一棵泛化能力强，处理未见实例能力强的决策树 基本策略“分而治之”递归的构造</p>
+<p>导致递归返回的三种情况：</p>
+<pre><code>1. 当前节点所包含的样本均属于同一类别，无需分类
 
-        <div class="article-info info-on-right">
-          
+2. 当前属性集合为空，或是所有样本在所有属性上取值相同，无法分类
+    ——利用当前节点的后验分布
+
+3. 当前节点样本集合为空，无法分类
+    ——利用其父节点样本分布作为当前节点先验分布
+</code></pre>
+<p>生成一棵决策树的伪代码</p>
+<p>输入训练集合D，属性集合A</p>
+<pre><code>1.生成节点generate_Tree
+2.if D 中全部为 C 类型 then
+   将 node 设置为 C 类节点 return
+3.if A为空 或者 D中样本在A上取值相同 then
+   将 node 设置为叶节点，类别标记为D中样本数最多的 类型 return
+4.从A中选择最优划分属性——此处时决策树的核心
+5.for a* 的每一个值 ai* do：
+    为 node 生成一个分支；令Di表示D在a*上取值为ai*的样本子集；
+    if Di 为空 then
+        将分支节点标记为叶节点，其类别属性设置为D中样本最多的类型 return
+    else
+        以a*作为Di下新的属性集合继续调用生成函数递归划分
+6.end for
+</code></pre>
+<p>关键决策是核心，关于关键决策的选取方式，有多种标准，但我们总是希望分支节点的种类越来越少，尽可能属于同一类别，因此我们要求节点的纯度越来越高</p>
+<p>1&gt; ID3决策树学习算法</p>
+<pre><code>信息熵是度量样本集合纯度的最常用的一种指标
+信息论之父 克劳德香农 给出了这样的计算公式：
+    假定当前样本集合D中第k类样本所占用的比例为pk,(k = 1, 2..…)则D的信息熵定义为
+        Ent(D) = -(sum)pk*log2(pk)
+    上式的意义就是当D的纯度越高，那么就有Ent(D)的值越小
+考虑到不同的节点所包涵的样本数肯定不同，给分支节点赋予权重|Di|/|D|，也就是样本数量越多的分支节点影响越大
+于是引出信息增益这一概念，ID3决策树学习算法就是根据信息增益最大的属性作为划分属性
+信息增益计算公式
+    Gain(D,a) = Ent(D) - (sum)|Di|/|D|*Ent(Di)
+</code></pre>
+<p>将信息增益作为准则来选择划分属性,也就是上述伪代码中第4句。</p>
+<p>具体的公式一开始看到可能会比较害怕，但是其实自己随便写几个数据，在草稿纸上比划比划就发现其实很简单，就算记不住公式也没事，毕竟ID3整个筛选的思想过程才是我们真正最需要去理解和学会的，能设计出这样的划分方法确实很厉害，整个算法设计的流程中的逻辑思考包括：</p>
+<pre><code>1. 首先想到借用熵这一概念，原因在于由于决策树的分支节点的属性并不全部相同，我们要想能够    筛选出更准确的分支节点，就要让节点纯度更高。
+
+2. 紧接着，直接使用熵和节点本身的要求是无法直接对应的，因为熵只能表示一个节点的纯度，而我们除了要保证节点的纯度，还要选到更优的划分属性，使得之后的字节点以及整体的算法性能表现的更好，所以设计了信息增益，用来转化每个属性对于整体的提升这一信息，之后就能筛选到最优属性。
+</code></pre>
+<p>2&gt;C4.5决策树算法</p>
+<pre><code>ID3中算法所使用的信息增益这一筛选准则，不难发现，对于样本类别取值多的属性有所偏好
+这也成了一个缺点，因此C4.5算法就该进了这一问题
+引入了新的筛选标准：增益率
+    Gain_ratio(D,a) = Gain(D,a)/IV(a)
+    IV(a)  = -(sum)|Di|/|D|log2(|Di|/|D|)
+IV(a)是a属性的固有属性，即a取值越多，此值越大。
+
+而增益率在弱化了ID3中的多属性偏好的情况下，也同样带来新的问题，就是增益率对属性少的有偏好，但是C4.5也想到了这一点，并没有直接将增益率作为衡量筛选标准，而是采用了启发式：先从候选划分属性中找出信息增益高于平均水平的属性，在从中选择增益率最大的。
+
+这一思想很妙，在ID3的基础上，弱化偏好的手段。这之中启发式的设计更是很有逻辑，先利用ID3，再用增益率。在一个偏好的情况下，选择尽可能最反偏好的属性，合理的弱化了信息增益这一多属性偏好带来的不利影响。简言之：让那个偏好不要那么大的影响。    
+</code></pre>
+<p>3&gt;CART决策树学习算法 Classification and Regression Tree</p>
+<pre><code>著名的决策树学习算法，分类和回归任务都可用
+划分属性与之前不同，而是使用了名叫“基尼指数”的属性
+基尼指数与一个集合的基尼值有关，集合D基尼值的计算公式：
+    Gini(D) = (sum_i)(sum_k)pk*pi = 1 - (sum_k)(pk^2)
+简言之：基尼指数表示了从D中随机选取了两个样本，其类别标记不一致的概率，因此有：
+    Gini(D)越小，则数据集D的纯度越高
+属性a的基尼指数：
+    Gini_index(D,a) = (sum_i)|Di|/|D|*Gini(Di)
+
+选择划分属性时，选择基尼指数最小的属性作为最优划分属性
+</code></pre>
+<h2 id="Python3香农熵的计算"><a href="#Python3香农熵的计算" class="headerlink" title="Python3香农熵的计算"></a>Python3香农熵的计算</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">import numpy</span><br><span class="line">from math import log</span><br><span class="line"></span><br><span class="line">def calShannonEnt(dataset):</span><br><span class="line">	numEntries &#x3D; len(dataset)</span><br><span class="line">	labelCounts &#x3D; &#123;&#125;</span><br><span class="line">	for featVec in dataset:</span><br><span class="line">		currentlabel &#x3D; featVec[-1]</span><br><span class="line">		if currentlabel not in labelCounts.keys():</span><br><span class="line">			labelCounts[currentlabel] &#x3D; 0</span><br><span class="line">		labelCounts[currentlabel] +&#x3D; 1</span><br><span class="line">	shannonEnt &#x3D; 0.0</span><br><span class="line">	for key in labelCounts :</span><br><span class="line">		prob &#x3D; float(labelCounts[key])&#x2F;numEntries</span><br><span class="line">		shannonEnt -&#x3D; prob * log(prob,2)</span><br><span class="line">	return shannonEnt</span><br><span class="line">	</span><br><span class="line">def createdataset():</span><br><span class="line">	dataset &#x3D; [[1,1,&#39;yes&#39;],[1,1,&#39;yes&#39;],[1,0,&#39;no&#39;],[0,1,&#39;no&#39;],[0,0,&#39;no&#39;]]</span><br><span class="line">	labels &#x3D; [&#39;no surfacing&#39;,&#39;flippers&#39;]</span><br><span class="line">	return dataset,labels</span><br><span class="line">	</span><br><span class="line">mydat,label &#x3D; createdataset()</span><br><span class="line">print(mydat)</span><br><span class="line">shannonent &#x3D; calShannonEnt(mydat)</span><br><span class="line">print(shannonent)</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -196,95 +267,119 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/06/14/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E2%80%94%E5%86%B3%E7%AD%96%E6%A0%91%E6%A8%A1%E5%9E%8B/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/06/06/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E2%80%94K%E8%BF%91%E9%82%BB%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2021-06-06T12:38:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-06</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2021/06/06/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E2%80%94K%E8%BF%91%E9%82%BB%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">机器学习—K近邻学习算法</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/06/06/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E2%80%94K%E8%BF%91%E9%82%BB%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95/">机器学习—K近邻学习算法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">机器学习</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8A%E5%A4%A9%E5%AD%A6%E4%B9%A0%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%AD%E7%9A%84-%E5%86%B3%E7%AD%96%E6%A0%91%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.</span> <span class="toc-text">今天学习机器学习中的 决策树模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Python3%E9%A6%99%E5%86%9C%E7%86%B5%E7%9A%84%E8%AE%A1%E7%AE%97"><span class="toc-number">2.</span> <span class="toc-text">Python3香农熵的计算</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/06/01/%E7%AE%97%E6%B3%95%E5%88%B7%E9%A2%98%E2%80%94%E5%BC%82%E6%88%96%E5%89%8D%E7%BC%80%E5%92%8C/" class="archive-article-date">
-  	<time datetime="2021-06-01T12:40:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-01</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/06/01/%E7%AE%97%E6%B3%95%E5%88%B7%E9%A2%98%E2%80%94%E5%BC%82%E6%88%96%E5%89%8D%E7%BC%80%E5%92%8C/">算法学习—异或前缀和</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">算法学习</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -317,8 +412,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
